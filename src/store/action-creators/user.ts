@@ -1,7 +1,6 @@
 import axios from "axios"
 import { Dispatch } from "react"
 import { TUserAction, UserActionTypes } from "../../interfaces"
-import type { AppDispatch } from '../../store'
 
 export const fetchUsers = () => {
   return async (dispatch: Dispatch<TUserAction>) => {
@@ -10,7 +9,7 @@ export const fetchUsers = () => {
       const response = await axios.get('https://jsonplaceholder.typicode.com/users')
       setTimeout(() => {
         dispatch({ type: UserActionTypes.FETCH_USERS_SUCCESS, payload: response.data })
-      }, 1000)
+      }, 500)
     } catch (e) {
       dispatch({ type: UserActionTypes.FETCH_USERS_ERROR, payload: 'Ошибка при загрузке пользователей' })
     }
