@@ -1,12 +1,14 @@
 import { FunctionComponent } from "react";
-
-import { UserList } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { Home, Todos, Users } from "./screens";
 
 const App: FunctionComponent = () => {
   return (
-    <div className="App">
-      <UserList />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/todos" element={<Todos />} />
+    </Routes>
   );
 }
 
