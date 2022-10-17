@@ -26,3 +26,7 @@ export const fetchTodos = (page = 1, limit = 10) => {
     }
   }
 }
+
+export const setTodoPage = (page: number): TTodoAction => {
+  return { type: TodoActionTypes.SET_TODO_PAGE, payload: page }
+}

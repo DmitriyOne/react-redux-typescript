@@ -1,0 +1,15 @@
+.pagination {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  margin-right: 1rem;
+  border: 2px solid gray;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.pagination.active {
+  border: 2px solid green;
+  color: green;
+}
