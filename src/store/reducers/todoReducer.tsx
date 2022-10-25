@@ -1,8 +1,7 @@
 import { TodoActionTypes, TTodoAction, TTodoState } from "../../interfaces"
 
 const defaultState: TTodoState = {
-  todos: [
-    { id: 1, title: '', completed: false }],
+  todos: [],
   loading: false,
   error: null,
   page: 1,

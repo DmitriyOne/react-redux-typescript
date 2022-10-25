@@ -11,7 +11,7 @@ export const Layout: FunctionComponent<TPops> = ({
 }) => (
   <div>
     <Header />
-    <main className='pt-4 pb-4'>
+    <main className='pt-4 pb-4 text-center w-50 mx-auto'>
       {children}
     </main>
   </div>
