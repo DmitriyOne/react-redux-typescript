@@ -9,6 +9,7 @@ interface IUser {
   name: string
   username: string
   email: string
+  completed: boolean
 }
 
 interface IFetchUsersAction {

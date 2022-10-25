@@ -1,6 +1,6 @@
 import axios from "axios"
 import { Dispatch } from "react"
-import { TodoActionTypes, TTodoAction } from "../../interfaces"
+import { ITodo, TodoActionTypes, TTodoAction } from "../../interfaces"
 
 export const fetchTodos = (page = 1, limit = 10) => {
   return async (dispatch: Dispatch<TTodoAction>) => {
@@ -29,4 +29,8 @@ export const fetchTodos = (page = 1, limit = 10) => {
 
 export const setTodoPage = (page: number): TTodoAction => {
   return { type: TodoActionTypes.SET_TODO_PAGE, payload: page }
+}
+
+export const checkedTodo = (todo: ITodo): TTodoAction => {
+  return {type: TodoActionTypes.CHANGE_TODO_COMPLETED, payload: todo}
 }

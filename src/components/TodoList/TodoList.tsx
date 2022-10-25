@@ -11,7 +11,7 @@ import styles from './todoList.module.scss'
 export const TodoList: FunctionComponent = () => {
   const pages = [1, 2, 3, 4, 5]
   const store = useTypedSelector(state => state.todos)
-  const { fetchTodos, setTodoPage } = useActions()
+  const { fetchTodos, setTodoPage, checkedTodo } = useActions()
 
   useEffect(() => {
     fetchTodos(store.page, store.limit)
@@ -36,6 +36,7 @@ export const TodoList: FunctionComponent = () => {
               value=""
               aria-label="Checkbox for following text input"
               checked={todo.completed}
+              onChange={() => checkedTodo(todo)}
             />
           </div>
           <div

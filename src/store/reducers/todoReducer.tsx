@@ -1,11 +1,12 @@
 import { TodoActionTypes, TTodoAction, TTodoState } from "../../interfaces"
 
 const defaultState: TTodoState = {
-  todos: [],
+  todos: [
+    { id: 1, title: '', completed: false }],
   loading: false,
   error: null,
   page: 1,
-  limit: 10
+  limit: 10,
 }
 
 export const todoReducer = (
@@ -24,6 +25,16 @@ export const todoReducer = (
 
     case TodoActionTypes.SET_TODO_PAGE:
       return { ...state, page: action.payload }
+
+    case TodoActionTypes.CHANGE_TODO_COMPLETED:
+      return {
+        ...state, ...state.todos.filter(todo => {
+          if (action.payload.id === todo.id) {
+            todo.completed = !todo.completed
+          } 
+          return todo
+        })
+      }
 
     default:
       return state
